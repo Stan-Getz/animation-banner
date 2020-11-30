@@ -36,10 +36,19 @@ body {
     color: #202082;
 }
 
+.top-part img {
+    opacity: 0;
+    animation: spin 0.5s 1s;
+    animation-fill-mode: forwards;
+}
+
 .top-part p {
     font-size: 2rem;
     font-weight: 800;
     padding-top: 10px;
+    animation: moveDown 1s;
+    animation-fill-mode: forwards;
+    
 }
 
 .middle-part {
@@ -48,6 +57,9 @@ body {
     padding: 15px;
     display: flex;
     align-items: center;
+    animation: moveUp 1s 0.8s cubic-bezier(0,.7,.48,1);
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .mid-part-number {
@@ -71,6 +83,9 @@ body {
     padding: 15px;  
     align-items: center;
     display: flex;
+    animation: moveUp 0.5s 0.4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .learn-more-btn {
@@ -80,4 +95,54 @@ body {
     padding: 15px 20px;
     font-size: 1.1rem;
     border: none;
+    animation: moveLeft 0.5s 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes spin {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
